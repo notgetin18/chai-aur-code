@@ -1,0 +1,31 @@
+these are the files and directories that should be ignored by Prettier
+# See https://prettier.io/docs/en/ignore.html for more information
+
+/.vscode
+/node_modules
+./dist
+
+*.env
+.env
+.env.*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Mac system files
+.DS_Store
+Thumbs.db
+
+# Prettier ignore file
+.prettierignore
