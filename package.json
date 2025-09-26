@@ -1,0 +1,17 @@
+{
+  "name": "chai",
+  "version": "1.0.0",
+  "description": "a backend at chain aur code channel",
+  "keywords": [
+    "javascript",
+    "mongoose",
+    "backend"
+  ],
+  "license": "ISC",
+  "author": "Amit kumar",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
