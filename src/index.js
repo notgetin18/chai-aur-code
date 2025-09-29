@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import connectDB from './db/index.js';
+import { app } from './app.js';
 
 // added this "-r dotenv/config --experimental-json-modules" in dev script of package.json to avoid this
 //  import 'dotenv/config' to load env variables before anything else
@@ -7,7 +8,23 @@ import connectDB from './db/index.js';
 dotenv.config({
   path: './env',
 });
-connectDB();
+
+// Connect with DB and Server 
+connectDB()
+  .then(() => {
+    const server = app.listen(process.env.PORT || 8000, () => {
+      console.log(`Server is running on Port ${process.env.PORT}`);
+    });
+
+    // Attach error listener to server
+    server.on('error', (error) => {
+      console.log('Server Error:', error);
+      throw error;
+    });
+  })
+  .catch((err) => {
+    console.log('MONGODB Connection Failed !!!', err);
+  });
 
 /*
 import mongoose from 'mongoose';
